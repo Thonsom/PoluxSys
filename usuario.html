@@ -1,0 +1,81 @@
+<?php require('conexion.php'); ?>
+<!--Declaracion del tipo de documento como HTML5-->
+<!DOCTYPE html>
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Demos and Documentation</title>
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.2.1.css" />
+	<link rel="stylesheet" href="docs/_assets/css/jqm-docs.css" />
+	<script src="js/jquery.js"></script>
+	<script src="docs/_assets/js/jqm-docs.js"></script>
+	<script src="js/jquery.mobile-1.2.1.js"></script>
+</head> 
+<body> 
+	<div data-role="page" class="type-interior">
+		<div data-role="header" data-theme="f">
+		
+		<h1>PoluxSys <img src="images/polux.png" width="35" height="35" align="center" > </h1>  
+		<!--<a href="index.php" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="../nav.html" data-icon="search" data-iconpos="notext" data-rel="dialog" data-transition="fade">Search</a>-->
+		
+
+	</div><!-- /header -->
+	<div data-role="content">
+		<div class="content-primary">
+			
+		<ul data-role="listview" data-split-icon="gear" data-split-theme="d">
+	    
+        <li><a href="corridas.html" target="_parent">
+				<img src="images/viajar.png" width="85" height="90" />
+				<h3>Vas a viajar...</h3>
+				<p>Consulta los Horarios, corridas</p>
+				</a>
+				<!--<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Registro de estudiantes</a>-->				
+		</li>
+
+		<li><a href="ubicanos.html" target="_parent">
+				<img src="images/gps.png" width="85" height="90" />
+				<h3>Ubicanos</h3>
+				<p>Estamos cerca de ti</p>
+				</a>
+				<!--<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Lista de estudiantes</a>-->			
+		</li>
+		
+		
+
+		<li><a href="puntosinteres.html" target="_parent">
+				<img src="images/turist.png" width="85" height="90" />
+				<h3>Puntos de interés</h3>
+				<p>Encuentra las zonas turisticas de la Mixteca</p>
+				</a>
+				<!--<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Registro de estudiantes</a>-->				
+		</li>
+
+		<li><a href="galeria.html" target="_parent">
+				<img src="images/galery.png" width="85" height="90" />
+				<h3>Galeria</h3>
+				<p>Nuestras instalaciones</p>
+				</a>
+				<!--<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Registro de estudiantes</a>-->				
+		</li>
+
+		<li><a href="acercade.html" target="_parent">
+				<img src="images/acerca.png" width="85" height="90" />
+				<h3>Acerca de...</h3>
+				<p>Autotransportes Nundeya</p>
+				</a>
+				<!--<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Registro de estudiantes</a>-->				
+		</li>
+		
+		</ul>		
+		</div><!--/content-primary -->
+	</div><!-- /content -->
+	<div data-role="footer" class="footer-docs" data-theme="c">
+		<p class="jqm-version"></p>
+		<p>Copyright 2014: PoluxSys</p>
+	</div>
+	</div><!-- /page -->
+	</body>
+</html>

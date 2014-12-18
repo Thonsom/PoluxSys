@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PhotoSwipe</title>
+	<meta name="author" content="Ste Brennan - Code Computerlove - http://www.codecomputerlove.com/" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link href="styles.css" type="text/css" rel="stylesheet" />
+	
+	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+	
+	<script type="text/javascript" src="lib/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="code.photoswipe.jquery-3.0.5.min.js"></script>
+
+	<!--JS jquerys-->
+	
+	
+	<!--<link rel="stylesheet" href="docs/_assets/css/jqm-docs.css" />
+	<script src="js/jquery.mobile-1.2.1.js"></script>-->
+	
+	<script type="text/javascript">
+
+		(function(window, $, PhotoSwipe){
+			
+			$(document).ready(function(){
+				
+				var options = {};
+				$("#Gallery a").photoSwipe(options);
+			
+			});
+			
+			
+		}(window, window.jQuery, window.Code.PhotoSwipe));
+		
+	</script>
+	
+</head>
+<body>
+
+<div data-role="header" >
+    
+ 
+  <div data-role="header" datha-theme="f">
+  	 <a href="index.html" target="_parent"><img src="images/home.ico"> </a>
+  	<center><h1>Galeria <img src="images/galery.png" width="35" height="35" align="center" > </h1></center>
+   
+  </div>  
+
+</div>
+<div id="MainContent">
+
+	
+	
+	<ul id="Gallery" class="gallery">
+		
+		<li><a href="images/full/asiento1.jpg"><img src="images/thumb/asiento1.jpg" alt="Image 001" /></a></li>
+		<li><a href="images/full/asiento2.jpg"><img src="images/thumb/asiento2.jpg" alt="Image 002" /></a></li>
+		<li><a href="images/full/asiento3.jpg"><img src="images/thumb/asiento3.jpg" alt="Image 003" /></a></li>
+		<li><a href="images/full/asiento4.jpg"><img src="images/thumb/asiento4.jpg" alt="Image 004" /></a></li>
+		<li><a href="images/full/asiento5.jpg"><img src="images/thumb/asiento5.jpg" alt="Image 005" /></a></li>
+		<li><a href="images/full/asiento6.jpg"><img src="images/thumb/asiento6.jpg" alt="Image 006" /></a></li>
+		<!--<li><a href="images/full/007.jpg"><img src="images/thumb/007.jpg" alt="Image 007" /></a></li>
+		<li><a href="images/full/008.jpg"><img src="images/thumb/008.jpg" alt="Image 008" /></a></li>
+		<li><a href="images/full/009.jpg"><img src="images/thumb/009.jpg" alt="Image 009" /></a></li>
+		<li><a href="images/full/010.jpg"><img src="images/thumb/010.jpg" alt="Image 010" /></a></li>
+		<li><a href="images/full/011.jpg"><img src="images/thumb/011.jpg" alt="Image 011" /></a></li>
+		<li><a href="images/full/012.jpg"><img src="images/thumb/012.jpg" alt="Image 012" /></a></li>
+		<li><a href="images/full/013.jpg"><img src="images/thumb/013.jpg" alt="Image 013" /></a></li>
+		<li><a href="images/full/014.jpg"><img src="images/thumb/014.jpg" alt="Image 014" /></a></li>
+		<li><a href="images/full/015.jpg"><img src="images/thumb/015.jpg" alt="Image 015" /></a></li>
+		<li><a href="images/full/016.jpg"><img src="images/thumb/016.jpg" alt="Image 016" /></a></li>
+		<li><a href="images/full/017.jpg"><img src="images/thumb/017.jpg" alt="Image 017" /></a></li>
+		<li><a href="images/full/018.jpg"><img src="images/thumb/018.jpg" alt="Image 018" /></a></li>-->
+		
+	</ul>
+	
+</div>	
+
+	
+
+</div>
+</body>
+</html>

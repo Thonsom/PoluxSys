@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+  
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	
+	<title>Google Map Slider</title>
+	
+	<link rel='stylesheet' type='text/css' href='css/style.css' />
+  	
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+  <script type='text/javascript' src='js/example.js'></script>
+  <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=true'></script>
+  <!--js-->
+  <link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.2.1.css" />
+  <link rel="stylesheet" href="docs/_assets/css/jqm-docs.css" />
+  <script src="js/jquery.js"></script>
+  <script src="docs/_assets/js/jqm-docs.js"></script>
+  <script src="js/jquery.mobile-1.2.1.js"></script>
+  
+  <script type='text/javascript'>
+  
+    $(function() {
+    
+      var chicago = new google.maps.LatLng(41.924832, -87.697456),
+          pointToMoveTo, 
+          first = true,
+          curMarker = new google.maps.Marker({}),
+          $el;
+      
+      var myOptions = {
+          zoom: 10,
+          center: chicago,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+      
+      var map = new google.maps.Map($("#map_canvas")[0], myOptions);
+    
+      $("#locations li").mouseenter(function() {
+      
+        $el = $(this);
+                
+        if (!$el.hasClass("hover")) {
+        
+          $("#locations li").removeClass("hover");
+          $el.addClass("hover");
+        
+          if (!first) { 
+            
+            // Clear current marker
+            curMarker.setMap(); 
+            
+            // Set zoom back to Chicago level
+            // map.setZoom(10);
+          }
+          
+          // Move (pan) map to new location
+          pointToMoveTo = new google.maps.LatLng($el.attr("data-geo-lat"), $el.attr("data-geo-long"));
+          map.panTo(pointToMoveTo);
+          
+          // Add new marker
+          curMarker = new google.maps.Marker({
+              position: pointToMoveTo,
+              map: map,
+              icon: "images/marker.png"
+          });
+          
+          // On click, zoom map
+          google.maps.event.addListener(curMarker, 'click', function() {
+             map.setZoom(14);
+          });
+          
+          // Fill more info area
+          $("#more-info")
+            .find("h2")
+              .html($el.find("h3").html())
+              .end()
+            .find("p")
+              .html($el.find(".longdesc").html());
+          
+          // No longer the first time through (re: marker clearing)        
+          first = false; 
+        }
+        
+      });
+      
+      $("#locations li:first").trigger("mouseenter");
+      
+    });
+
+  </script>
+
+</head>
+
+<body>
+<div data-role="header" >
+    
+    
+
+  <div data-role="header">
+    <a href="index.html" data-role="button" data-icon="home" data-iconpos="notext" data-theme="b" data-iconpos="left" data-inline="true">Inicio</a>
+    <h1>Lugares <img src="images/turist.png" width="35" height="35" align="center" > </h1>  
+  </div>  
+</div>
+	<div id="page-wrap">
+	
+	   <!--<h1>Google Maps Slider</h1>-->
+	   
+	   <ul id="locations">
+
+      
+        <li data-geo-lat="17.517" data-geo-long="-97.333" >
+          <h3>Santo Domingo Yanhuitlán</h3>
+          <p>Exconvento</p>
+          <p class="longdesc"><strong>Acerca de:</strong>Se ha escrito sobre la existencia de un primitivo templo, 
+            cuando Fray Bernardino de Minaya estuvo algún tiempo, entre 1529 y 1530, en la Mixteca. Yanhuitlán fue abandonado por 
+             los religiosos en 1520, pero regresaron en 1535. La construcción del templo se inició en 1541, por Fray Domingo de la Cruz, 
+             al mismo tiempo que se construía el de Teposcolula, por Fray Pedro Peña.</p>
+        </li>
+        
+        <li data-geo-lat="17.266657" data-geo-long="-97.678195">
+          <h3>Sitio de Taxis</h3>
+          <p>Taxis la Asunción</p>
+          <p class="longdesc"><strong>Acerca de:</strong> Servicios de transporte Todos los dias de: 7:00am - 11:00pm +52 953 552 1874</p>
+        </li>
+        
+        <li data-geo-lat="17.2333" data-geo-long="-97.5667">
+          <h3>Magdalena Peñasco</h3>
+          <p>Caminata en el cerro del Gachupin</p>
+          <p class="longdesc"><strong>Acerca de:</strong>   
+             Se le da el nombre de Magdalena por la virgen de Santa María Magdalena que 
+            se encuentra en la parroquia de este pueblo y Peñasco es por el famoso cerro que se le denomina El Gachupín, que tiene 
+            un peñasco de unos 600 metros de altura sobre el nivel del mar.</p>
+        </li>
+        
+        <li data-geo-lat="17.1167" data-geo-long="-97.55 ">
+          <h3>San Pedro Molinos</h3>
+          <p>Cueva donde brota el agua</p>
+          <p class="longdesc"><strong>Acerca de:</strong> 
+
+              El río más importante del pueblo, cuyo nombre es río de San Pedro Molinos, 
+              atraviesa en el centro del poblado, mejor conocido como la cueva donde brota el agua.
+          </p>
+        </li>
+        
+     </ul>
+
+     <div id="map_canvas"></div>
+     
+     <div id="more-info"><div>
+     
+        <h2>Más informacion</h2>
+        <p>No hay conexión a internet</p>
+     
+     </div></div>
+			
+	</div>
+	
+</body>
+
+</html>
